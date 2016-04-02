@@ -17,9 +17,9 @@
         <!-- load angular via CDN -->
         <!-- version of angular being used for this course -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-        <script src="https://code.angularjs.org/1.4.9/angular-messages.min.js">    </script>
-        <script src="https://code.angularjs.org/1.4.9/angular-resource.min.js"></script>
-        <script src="app.js"></script>
+        <!-- <script src="https://code.angularjs.org/1.4.9/angular-messages.min.js"></script>
+        <script src="https://code.angularjs.org/1.4.9/angular-resource.min.js"></script> -->
+
 
     </head>
     <body>
@@ -37,8 +37,6 @@
 			</div>
 			</nav>
 		</header>
-
-      <div class="container">
 
 			<div ng-controller="mainController">
       <!-- =========================== -->
@@ -63,19 +61,19 @@
         <!-- <h1> Hello {{name + '. How are you?'}} </h1> -->
 
       <!-- ============================-->
-        <!-- USED WITH THE TWO WAY DATA BINDING EXERCISE -->
-        <!-- <div>
+        <!-- USED WITH THE TWO WAY DATA BINDING EXERCISE  -->
+         <div>
           <label> What is your twitter handle?</label>
           <input type="text" ng-model="handle"/>
         </div>
 
         <hr />
 
-        <h1>twitter.com/{{lowercasehandle()}}</h1> -->
+        <h1>twitter.com/{{lowercasehandle()}}</h1>
       <!--============================= -->
       </div>
 
 		</div>
-
+    <script src="app.js"></script>
     </body>
 </html>
