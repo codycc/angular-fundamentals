@@ -19,13 +19,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
         <script src="https://code.angularjs.org/1.4.9/angular-messages.min.js">    </script>
         <script src="https://code.angularjs.org/1.4.9/angular-resource.min.js"></script>
-
-
         <script src="app.js"></script>
+
     </head>
     <body>
 
-        <header>
+    <header>
 			<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
@@ -39,13 +38,13 @@
 			</nav>
 		</header>
 
-        <div class="container">
+      <div class="container">
 
 			<div ng-controller="mainController">
-
+      <!-- =========================== -->
         <!-- USED FOR THE ngMessages example -->
 
-        <!-- <form name="myForm">
+       <!-- <form name="myForm">
          <label>
            Enter text:
            <input type="text" ng-model="field" name="myField" required minlength="5" />
@@ -58,10 +57,22 @@
            </div>
          </div>
        </form> -->
-
+      <!-- ============================-->
         <!-- Refering to the maincontroller and what is defined in scope -->
         <!-- USED IN THE SCOPE AND INTERPOLATION EXAMPLE -->
-        <h1> Hello {{name + '. How are you?'}} </h1>
+        <!-- <h1> Hello {{name + '. How are you?'}} </h1> -->
+
+      <!-- ============================-->
+        <!-- USED WITH THE TWO WAY DATA BINDING EXERCISE -->
+        <!-- <div>
+          <label> What is your twitter handle?</label>
+          <input type="text" ng-model="handle"/>
+        </div>
+
+        <hr />
+
+        <h1>twitter.com/{{lowercasehandle()}}</h1> -->
+      <!--============================= -->
       </div>
 
 		</div>

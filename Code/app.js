@@ -58,6 +58,7 @@
 //   $log.info($scope.formattedname) // CODY
 // });
 
+
 //USING NGRESOURCE
 // var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 // myApp.controller('mainController', function($log,$scope,$filter,$resource) {
@@ -66,8 +67,10 @@
 //
 // });
 
+
 // NOTETOSELF : CHECK OUT NGMODULES, CODE CAN BE GRABBED, REFERENCED
 // AS DEPENDENCY AND USED
+
 
 // //DEALING WITH MINIFICATION
 // var myApp = angular.module('myApp', []);
@@ -93,3 +96,15 @@
 //     $scope.name = "Everybody";
 //   },3000);
 // }]);
+
+
+//DIRECTIVE AND TWO WAY DATA BINDING
+var myApp = angular.module('myApp', []);
+
+myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
+
+  $scope.handle = '';
+  $scope.lowercasehandle = function() {
+    return $filter('lowercase')($scope.handle);
+  }
+}]);
