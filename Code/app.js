@@ -58,7 +58,7 @@
 //   $log.info($scope.formattedname) // CODY
 // });
 
-//Using ngResource
+//USING NGRESOURCE
 // var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 // myApp.controller('mainController', function($log,$scope,$filter,$resource) {
 //
@@ -82,3 +82,14 @@
 //Minifier will never touch whats inside a string
 //MINIFIED VERSION
 // myApp.controller("mainController",["$scope","$log",function(o,n){o.info(n)}]);
+
+//SCOPE INTERPOLATION
+// var myApp = angular.module('myApp', []);
+// myApp.controller('mainController', ['$scope', '$timeout', function($scope, $timeout) {
+//
+//   $scope.name = "cody"
+// //Switches 'cody' to 'everybody' with the timeout
+//   $timeout(function() {
+//     $scope.name = "Everybody";
+//   },3000);
+// }]);
