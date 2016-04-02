@@ -24,23 +24,41 @@
 // }]);
 
 //COMMON DIRECTIVES
+// var myApp = angular.module('myApp', []);
+//
+// myApp.controller('mainController', ['$scope', '$filter', function($scope,$filter) {
+//   $scope.handle = '';
+//
+//   $scope.lowercasehandle = function() {
+//     return $filter('lowercase')($scope.handle);
+//   };
+//   $scope.characters = 5;
+//
+//   $scope.rules = [
+//     {rulename: "Must be 5 characters"},
+//     {rulename: "Must not be used elsewhere"},
+//     {rulename: "Must be cool"}
+//   ];
+//   console.log($scope.rules);
+//
+//
+// }]);
 
-var myApp = angular.module('myApp', []);
-
-myApp.controller('mainController', ['$scope', '$filter', function($scope,$filter) {
-  $scope.handle = '';
-
-  $scope.lowercasehandle = function() {
-    return $filter('lowercase')($scope.handle);
-  };
-  $scope.characters = 5;
-
-  $scope.rules = [
-    {rulename: "Must be 5 characters"},
-    {rulename: "Must not be used elsewhere"},
-    {rulename: "Must be cool"}
-  ];
-  console.log($scope.rules);
-
-
-}]);
+//EXTERNAL DATA AND $HTTP
+// myApp.controller('mainController', ['$scope', '$filter', '$http' function($scope, $filter, $http) {
+//   $scope.handle = '';
+//
+//   $scope.lowercasehandle = function() {
+//    return $filter('lowercase')($scope.handle);
+//    };
+//    $scope.characters = 5;
+//    // IF JSON WAS ON THIS URL
+//    $http.get('/api')
+//       .success(function (result) {
+//         $scope.rules = result;
+//       })
+//       .error(function (data, status){
+//         console.log(data);
+//       });
+//
+// }]);
