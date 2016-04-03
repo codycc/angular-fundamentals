@@ -120,27 +120,37 @@ myApp.service('nameService', function(){
   };
 });
 
-myApp.controller('mainController', ['$scope', '$log', 'nameService', function($scope,$log, nameService){
-  $scope.name = nameService.name;
+myApp.controller('mainController', ['$scope', '$log',function($scope,$log){
 
-  $scope.$watch('name', function(){
-    nameService.name = $scope.name
-  });
+  $scope.person ={
+    name: 'john doe',
+    address: "555 main",
+    city: 'new york',
+    state: 'ny',
+    zip: '1111'
+  }
+
+  $scope.formattedAddress = function(person) {
+    return person.address + ', ' + person.city + ' ' + person.state + ' ' + person.zip;
+
+  };
   
-    $log.log(nameService.name);
-    $log.log(nameService.nameLength());
+}]);
+
+
+myApp.controller('secondController', ['$scope', '$log','$routeParams', function($scope, $log, $routeParams){
 
 }]);
 
-myApp.controller('secondController', ['$scope', '$log','$routeParams','nameService', function($scope, $log, $routeParams,nameService){
-  $scope.num = $routeParams.num || 1;
-  $scope.name = nameService.name;
-
-  $scope.$watch('name', function(){
-    nameService.name = $scope.name
-  });
-
-    $log.log(nameService.name);
-    $log.log(nameService.nameLength());
-
-}]);
+myApp.directive('searchResult', function(){
+  return {
+    restrict: 'AECM',
+    templateUrl: 'directives/searchresult.html',
+    replace: true,
+    scope: {
+      personObject: "=",
+      // & means there is a function
+      formattedAddressFunction: "&"
+    }
+  }
+});
