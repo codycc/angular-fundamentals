@@ -167,6 +167,7 @@ myApp.directive('searchResult', function(){
       personObject: "=",
       // & means there is a function
       formattedAddressFunction: "&"
-    }
+    },
+    transclude: true
   }
 });
