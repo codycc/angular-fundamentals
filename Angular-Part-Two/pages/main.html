@@ -2,11 +2,10 @@
 <input type="text" value="doe"/>
 <h3>Search Results</h3>
 
-<div class="list-group">
-  <search-result person-object="person" formatted-address-function="formattedAddress(aperson)"></search-result>
-  <search-result></search-result>
-  <search-result></search-result>
-  <search-result></search-result>
+<div class="list-group" >
+  <search-result person-object="person" formatted-address-function="formattedAddress(aperson)"
+  ng-repeat="person in people">
+  </search-result>
 
 
 </div>

@@ -122,19 +122,35 @@ myApp.service('nameService', function(){
 
 myApp.controller('mainController', ['$scope', '$log',function($scope,$log){
 
-  $scope.person ={
+  $scope.people =[
+    {
     name: 'john doe',
     address: "555 main",
     city: 'new york',
     state: 'ny',
     zip: '1111'
-  }
+    },
+    {
+    name: 'jane doe',
+    address: "25 main",
+    city: 'new york',
+    state: 'ny',
+    zip: '1111'
+    },
+    {
+    name: 'george doe',
+    address: "5545 main",
+    city: 'new york',
+    state: 'ny',
+    zip: '1111'
+    }
+  ]
 
   $scope.formattedAddress = function(person) {
     return person.address + ', ' + person.city + ' ' + person.state + ' ' + person.zip;
 
   };
-  
+
 }]);
 
 
