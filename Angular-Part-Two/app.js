@@ -98,19 +98,29 @@ myApp.config(function ($routeProvider){
     templateUrl: 'pages/main.html',
     controller: 'mainController'
   })
-  .when('/second', {
+
+  .when('/second/', {
+    templateUrl: 'pages/second.html',
+    controller: 'secondController'
+  })
+
+  .when('/second/:num', {
     templateUrl: 'pages/second.html',
     controller: 'secondController'
   })
 
 });
 
-myApp.controller('mainController', ['$scope', '$location', '$log', function($scope, $location, $log){
+myApp.controller('mainController', ['$scope', '$log', function($scope,$log){
   $scope.name = 'Main';
+  // looking at singletons
+  $log.main = 'Property from main';
+  $log.log($log);
 
 }]);
 
-myApp.controller('secondController', ['$scope', '$location', '$log', function($scope, $location, $log){
-  $scope.name = "Second";
-
+myApp.controller('secondController', ['$scope', '$log','$routeParams', function($scope, $log, $routeParams){
+  $scope.num = $routeParams.num || 1;
+  $log.second = "Property from second";
+  $log.log($log);
 }]);
