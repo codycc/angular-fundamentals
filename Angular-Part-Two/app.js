@@ -90,6 +90,7 @@
 // }]);
 
 //ROUTING, TEMPLATES, AND CONTROLLERS
+// and creating a service
 var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(function ($routeProvider){
@@ -111,16 +112,35 @@ myApp.config(function ($routeProvider){
 
 });
 
-myApp.controller('mainController', ['$scope', '$log', function($scope,$log){
-  $scope.name = 'Main';
-  // looking at singletons
-  $log.main = 'Property from main';
-  $log.log($log);
+myApp.service('nameService', function(){
+  var self = this;
+  this.name = 'John Doe';
+  this.nameLength = function(){
+    return self.name.length;
+  };
+});
+
+myApp.controller('mainController', ['$scope', '$log', 'nameService', function($scope,$log, nameService){
+  $scope.name = nameService.name;
+
+  $scope.$watch('name', function(){
+    nameService.name = $scope.name
+  });
+  
+    $log.log(nameService.name);
+    $log.log(nameService.nameLength());
 
 }]);
 
-myApp.controller('secondController', ['$scope', '$log','$routeParams', function($scope, $log, $routeParams){
+myApp.controller('secondController', ['$scope', '$log','$routeParams','nameService', function($scope, $log, $routeParams,nameService){
   $scope.num = $routeParams.num || 1;
-  $log.second = "Property from second";
-  $log.log($log);
+  $scope.name = nameService.name;
+
+  $scope.$watch('name', function(){
+    nameService.name = $scope.name
+  });
+
+    $log.log(nameService.name);
+    $log.log(nameService.nameLength());
+
 }]);
