@@ -16,6 +16,7 @@
 
         <!-- load angular via CDN -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.4.9/angular-route.min.js"></script>
         <script src="app.js"></script>
     </head>
     <body>
@@ -28,20 +29,21 @@
   				</div>
 
   				<ul class="nav navbar-nav navbar-right">
-  					<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+  					<li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#/second"><i></i> Second</a></li>
   				</ul>
   			</div>
 			</nav>
 		</header>
 
     <div class="container">
-        <div ng-controller="mainController">
+      <div ng-view></div>
           <!-- FOR WATCHERS AND DIGEST LOOP EXERCISE / COMMON DIRECTIVE EXERCISE-->
-
+<!--
           <div>
            <label> What is your twitter handle?</label>
            <input type="text" ng-model="handle"/>
-         </div>
+         </div> -->
           <!-- The alert goes away when scope characters are met -->
           <!-- <div class="alert" ng-class="{'alert-warning':
            handle.length < characters,
@@ -65,15 +67,15 @@
           </li>
         </ul> -->
 
-        <h1>{{name}}</h1>
+        <!-- <h1>{{name}}</h1> -->
 
-        
+
         <!-- USED WITH THE MULTIPLE CONTROLLERS EXERCISE -->
-        <div ng-controller="secondController">
+        <!-- <div ng-controller="secondController">
           <h1>{{name}}<h1>
-        </div>
+        </div> -->
 
-    </div>
+
   </div>
 
     </body>
